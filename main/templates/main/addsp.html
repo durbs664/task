@@ -1,0 +1,54 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+                <h3 class="text-center">Add Service Center</h3>
+                <!-- while inserting the image in via html files, mention enctype,(enctype="multipart/form-data") -->
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <!--.AS_P HELPS TO ALIGN THE FORM -->
+                    <!-- {{form.as_p}} -->
+                    {{form | crispy}}
+
+                    <input type='submit' value="Add" class="btn btn-info">
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <form action="" method="POST" enctype="multipart/form-data"> 
+        {% csrf_token %}
+        Name:<br> 
+        <input type="text" name="username"> 
+        <br> 
+        Pan No. :<br> 
+        <input type="text" name="username"> 
+        <br> 
+        About:<br> 
+        <input type="text" name="username"> 
+        <br> 
+        Location:<br> 
+        <input type="text" name="username"> 
+        <br> 
+        Contact:<br> 
+        <input type="text" name="username"> 
+        <br> 
+        Rating:<br> 
+        <input type="text" name="username"> 
+        <br> 
+        Image :<br> 
+        <input type="image" name="email_id"> 
+        <br><br> 
+        <input type="submit" value="Submit"> 
+      </form>  
+         -->
+
+    
+{% endblock content %}
+    
