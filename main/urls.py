@@ -1,6 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 #different things mind it while coding
-from .views import *
+from .views import add_sp, detail, edit_sp, delete_sp
 from . import views
 
 app_name = "main"

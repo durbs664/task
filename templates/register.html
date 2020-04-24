@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h2 ALIGN="CENTER">Registration form</h2>
+
+<form  method="POST">
+    {% csrf_token %}
+<table border="0" align="center">
+<tbody>
+
+<tr>
+<td><label for="id">Email: </label></td>
+<td>{{rf.email}}</td>
+<td>{{rf.email.errors}}</td>
+</tr>
+
+<tr>
+<td><label for="name">First Name: </label></td>
+<td>{{ rf.fname}}</td>
+<td>{{rf.fname.errors}}</td>
+
+</tr>
+
+<tr>
+<td><label for="course">Last Name: </label></td>
+<td>{{ rf.lname}}</td>
+<td>{{rf.lname.errors}}</td>
+
+</tr>
+
+<tr>
+<td><label for="course">Username: </label></td>
+<td>{{ rf.username}}</td>
+<td>{{rf.username.errors}}</td>
+
+</tr>
+
+
+
+<tr>
+<td><label for="branch">Bike No: </label></td>
+<td>{{ rf.bike_no}}</td>
+<td>{{rf.bike_no.errors}}</td>
+
+</tr>
+
+<tr>
+<td><label for="">Contact: </label></td>
+<td>{{ rf.contact_no}}</td>
+</tr>
+
+<tr>
+<td><label for="email">Password:</label></td>
+<td>{{ rf.password1}}</td>
+<td>{{rf.password1.errors}}</td>
+
+</tr>
+
+<tr>
+<td><label for="username">Confirm Password:</label></td>
+<td>{{ rf.password2}}</td>
+<td>{{rf.password2.errors}}</td>
+
+</tr>
+
+<tr>
+<td align="right"><input name="Submit" type="Submit" value="ADD" /></td>
+</tr>
+
+{% for error in rf.errors  %}
+    {{error}}
+{% endfor %}
+
+
+</tbody>
+</table>
+</form>
+</html>
+
+
+
+{% endblock content %}
+
+
+

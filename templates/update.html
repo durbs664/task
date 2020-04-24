@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h2 ALIGN="CENTER">Update Account</h2>
+
+<form  method="POST">
+    {% csrf_token %}
+<table border="0" align="center">
+<tbody>
+
+<tr>
+<td><label for="id">Email: </label></td>
+<td>{{uf.email}}</td>
+<td>{{uf.email.errors}}</td>
+</tr>
+
+<tr>
+<td><label for="name">First Name: </label></td>
+<td>{{ uf.fname}}</td>
+<td>{{uf.fname.errors}}</td>
+
+</tr>
+
+<tr>
+<td><label for="course">Last Name: </label></td>
+<td>{{ uf.lname}}</td>
+<td>{{uf.lname.errors}}</td>
+
+</tr>
+
+<tr>
+<td><label for="course">Username: </label></td>
+<td>{{ uf.username}}</td>
+<td>{{uf.username.errors}}</td>
+
+</tr>
+
+
+
+<tr>
+<td><label for="branch">Bike No: </label></td>
+<td>{{ uf.bike_no}}</td>
+<td>{{uf.bike_no.errors}}</td>
+
+</tr>
+
+<tr>
+<td><label for="">Contact: </label></td>
+<td>{{ uf.contact_no}}</td>
+</tr>
+<!-- 
+<tr>
+<td><label for="email">Password:</label></td>
+<td>{{ uf.password1}}</td>
+<td>{{uf.password1.errors}}</td>
+
+</tr>
+
+<tr>
+<td><label for="username">Confirm Password:</label></td>
+<td>{{ uf.password2}}</td>
+<td>{{uf.password2.errors}}</td>
+
+</tr> -->
+
+<tr>
+<td align="right"><input name="Submit" type="Submit" value="Save Changes" class="btn btn-outline-danger" /></td>
+</tr>
+
+
+</tbody>
+</table>
+</form>
+
+
+
+
+{% endblock content %}
+
+
+
